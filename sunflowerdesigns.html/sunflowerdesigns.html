@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sunflower Designs</title>
+    <style>
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #ffffff; /* Cor de fundo do site */
+            color: #333; /* Cor da fonte padrão */
+        }
+
+        /* Estilos do cabeçalho */
+        header {
+            background-color: #ffeb3b; /* Amarelo claro do girassol */
+            color: #000; /* Cor da fonte no cabeçalho */
+            padding: 2rem 0;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        header .logo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background-color: #fff; /* Fundo branco para contraste */
+            margin: 0 auto 1rem auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        header .logo img {
+            width: 100%;
+            height: auto;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            color: #000; /* Cor da fonte do título no cabeçalho */
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: #333; /* Cor da fonte do subtítulo no cabeçalho */
+        }
+
+        /* Navegação */
+        nav {
+            background-color: #333; /* Cor de fundo do menu */
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        nav a {
+            color: #ffeb3b; /* Amarelo claro */
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #ffd600; /* Amarelo mais escuro */
+        }
+
+        /* Estilos das seções */
+        .container {
+            width: 85%;
+            margin: auto;
+            padding: 2rem 0;
+        }
+
+        section {
+            margin-bottom: 3rem;
+        }
+
+        section h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            text-align: center;
+            color: #ffeb3b; /* Amarelo claro */
+        }
+
+        section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            text-align: center;
+            color: #555;
+        }
+
+        /* Estilos da seção de portfólio */
+        .portfolio-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+      .portfolio-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 30%; /* Largura do item do portfólio */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    padding: 1rem;
+}
+
+        .portfolio-item img {
+            width: 100%;
+            height: auto;
+        }
+
+        .portfolio-item h3 {
+            padding: 1rem;
+            text-align: center;
+            background-color: #333; /* Cor de fundo dos itens de portfólio */
+            color: #ffffff; /* Cor da fonte dos itens de portfólio */
+        }
+
+        .portfolio-item:hover {
+            transform: scale(1.05);
+        }
+
+        /* Seção de Comentários e Avaliações */
+        .reviews {
+            margin-top: 2rem;
+        }
+
+        .review {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .review .review-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .review .review-header img {
+            width: 24px;
+            height: 24px;
+            margin-right: 0.5rem;
+        }
+
+        .review .review-header h4 {
+            font-size: 1.2rem;
+            color: #333;
+        }
+
+        .review .review-header .rating {
+            margin-left: auto;
+        }
+
+        .review .review-header .rating img {
+            width: 24px;
+            height: 24px;
+        }
+
+        .review p {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        /* Estilos da seção Instagram */
+        .instagram-feed {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .instagram-item {
+            width: 30%;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .instagram-item img {
+            width: 100%;
+            height: auto;
+        }
+
+        .instagram-follow {
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .instagram-follow a {
+            background-color: #ffeb3b; /* Amarelo claro */
+            color: #333;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .instagram-follow a:hover {
+            background-color: #000000;
+        }
+
+        /* Estilos da seção de contato */
+        .contact-form {
+            max-width: 600px;
+            margin: auto;
+            padding: 2rem;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 0.75rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .contact-form button {
+            width: 100%;
+            padding: 0.75rem;
+            background-color: #000000; /* Amarelo claro */
+            color: #333;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .contact-form button:hover {
+            background-color: #ffd600;
+        }
+
+        /* Estilos do rodapé */
+        footer {
+            background-color: #000000; /* Cor de fundo do rodapé */
+            color: #ffeb3b; /* Cor da fonte do rodapé */
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 3rem;
+        }
+
+        footer p {
+            font-size: 1rem;
+        }
+
+        /* Estilos do botão do WhatsApp */
+        .whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25D366; /* Verde do WhatsApp */
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            text-decoration: none;
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg'); /* Logo do WhatsApp */
+            background-size: 30px 30px; /* Tamanho do ícone */
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <!-- Substitua o URL abaixo pelo caminho da sua imagem de logo -->
+            <img src="./src/imagens/Logo-Sunflowerdesigns.png" alt="Logo">
+        </div>
+        <h1>Sunflower Designs</h1>
+        <p>Designs exclusivos e personalizados para você.</p>
+    </header>
+
+    <nav>
+        <a href="#home">Início</a>
+        <a href="#portfolio">Portfólio</a>
+        <a href="#RedeSocial">Rede Social</a>
+        <a href="#contato">Contato</a>
+    </nav>
+
+    <div class="container">
+        <!-- Seção Portfólio -->
+        <section id="portfolio">
+            <h2>Portfólio</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <img src="./src/imagens/Adesivo de Mimo.png" alt="Projeto 1">
+                    <h3>Adesivo para Mimo</h3>
+                </div>
+                <div class="portfolio-item">
+                    <img src="./src/imagens/Bala personalizada.png" alt="Projeto 2">
+                    <h3>Bala Personalizada</h3>
+                </div>
+                <div class="portfolio-item">
+                    <img src="./src/imagens/Cartão visita.png" alt="Projeto 3">
+                    <h3>Cartão de Agradecimento</h3>
+                </div>
+            </div>
+        </section>
+                        <!-- Adicione mais comentários aqui -->
+                    </div>
+                </div>
+                <!-- Repita a estrutura para outros projetos -->
+            </div>
+        </section>
+
+        <!-- Seção Instagram -->
+        <section id="Rede Social">
+            <h2>Instagram</h2>
+            <div class="instagram-feed">
+                <div class="instagram-item">
+                    <img src="./src/imagens/Cartão para mimo borboleta.png" alt="Instagram 1">
+                </div>
+                <div class="instagram-item">
+                    <img src="./src/imagens/Cartão de agradecimento (1).png" alt="Instagram 2">
+                </div>
+                <div class="instagram-item">
+                    <img src="./src/imagens/post cartão visita.png" alt="Instagram 3">
+                </div>
+            </div>
+            <div class="instagram-follow">
+                <a href="https://www.instagram.com/_sunflower.designs_">Siga-nos no Instagram</a>
+            </div>
+        </section>
+
+        <!-- Seção Contato -->
+        <section id="contato">
+            <h2>Contato</h2>
+            <div class="contact-form">
+                <input type="text" placeholder="Seu nome">
+                <input type="email" placeholder="Seu e-mail">
+                <textarea placeholder="Sua mensagem"></textarea>
+                <button>Enviar Mensagem</button>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Sunflower Designs. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Botão de WhatsApp -->
+    <a href="https://wa.me/5548991288220" class="whatsapp-button" aria-label="WhatsApp"></a>
+</body>
+</html>
